@@ -304,18 +304,6 @@ EXCEPT
 SELECT Patient_id
 FROM Payment;
 
-SELECT Name_P, Phone_no1
-FROM P_phone_no
-INTERSECT
-SELECT Name_D, Phone_no
-FROM D_phone_no;
-
-CREATE TRIGGER Print_Total BEFORE INSERT ON Payment
-FOR EACH ROW
-BEGIN
-    SET NEW.TotalFee = NEW.Doctor_fee + NEW.Medicine_fee 
-END ;
-
 
 DROP DATABASE Hospital_Management_System;
 
